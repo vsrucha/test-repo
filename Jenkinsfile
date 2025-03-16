@@ -17,21 +17,21 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Running tests..."
-                sh 'mvn test' 
+                bat 'mvn test' 
             }
         }
 
         stage('Deploy to Staging') {
             steps {
                 echo "Deploying to Staging server: ${STAGING_SERVER}"
-                sh "echo Deploying build to ${STAGING_SERVER}"  // Showcasing deployment
+                bat "echo Deploying build to ${STAGING_SERVER}"  // Showcasing deployment
             }
         }
 
         stage('Deploy to Production') {
             steps {
                 echo "Deploying to Production server: ${PROD_SERVER}"
-                sh "echo Deploying build to ${PROD_SERVER}"  //Showcasing deployment
+                bat "echo Deploying build to ${PROD_SERVER}"  //Showcasing deployment
             }
         }
     }
